@@ -7,7 +7,7 @@ const app = express();
 
 const server = http.createServer(app);
 const socket = require("socket.io");
-const io = socket(server, {origins: '*:*'});
+const io = socket(server, {origins: '*:*', transports: [ 'websocket', 'polling' ]});
 
 app.use(cors());
 
